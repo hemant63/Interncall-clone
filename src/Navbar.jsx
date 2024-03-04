@@ -7,6 +7,7 @@ function Navbar() {
   const [users, setUsers] = useState(
     JSON.parse(localStorage.getItem("data")) || []
   );
+  console.log("test");
   //   const handleSubmit = (e) => {
   //     e.preventDefault();
 

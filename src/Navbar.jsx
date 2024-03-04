@@ -8,6 +8,7 @@ function Navbar() {
     JSON.parse(localStorage.getItem("data")) || []
   );
   console.log("test");
+  console.log("hellos");
   //   const handleSubmit = (e) => {
   //     e.preventDefault();
 

@@ -1,27 +1,27 @@
-import { ReactDOM } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./Home";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Navbar() {
+  const navigate = useNavigate();
   const [users, setUsers] = useState(
     JSON.parse(localStorage.getItem("data")) || []
   );
-  console.log("test");
-  console.log("hello2");
-  console.log("hellos");
-  //   const handleSubmit = (e) => {
-  //     e.preventDefault();
+  console.log(users);
+  const handleSubmit = (e) => {
+    let name = users.name;
+    return name;
+  };
 
-  //     let val = users.find((v, i, arr) => {
-  //       return v.email === info.email && v.password === info.password;
-  //     });
-  //     console.log(val, "vals");
-  //     // setUsers([...users, info]);
-  //     if (val) {
-  //       return val.name;
-  //     }
-  //   };
+  const handleLogOut = (e) => {
+    // const val = setUsers({
+    //   name: "",
+    //   email: "",
+    //   password: "",
+    // });
+    localStorage.removeItem("data");
+    console.log("logout");
+    navigate("/");
+  };
   return (
     <div>
       <div className="container " id="navbar">
@@ -48,7 +48,7 @@ function Navbar() {
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-              <span className="fs-5 fw-bold">My Profile</span>
+              <span className="fs-5 fw-bold">{handleSubmit()}</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="30"
@@ -76,7 +76,7 @@ function Navbar() {
                 </a>
               </li>
               <li>
-                <a className="dropdown-item" href="#">
+                <a className="dropdown-item" onClick={handleLogOut} href="#">
                   Logout
                 </a>
               </li>

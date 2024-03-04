@@ -7,7 +7,6 @@ function Login() {
     email: "",
     password: "",
   });
-  const [isLoggedIn, setIsLoggedIn] = useState();
 
   const [users, setUsers] = useState(
     JSON.parse(localStorage.getItem("user")) || []
@@ -30,7 +29,7 @@ function Login() {
     console.log(val, "vals");
     // setUsers([...users, info]);
     if (val) {
-      localStorage.setItem("isLoggedIn", JSON.stringify(val));
+      localStorage.setItem("data", JSON.stringify(val));
       navigate("/home");
     }
     setInfo({

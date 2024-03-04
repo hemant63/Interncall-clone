@@ -9,6 +9,7 @@ function Navbar() {
   );
   console.log("test");
   console.log("hello2");
+  console.log("hellos");
   //   const handleSubmit = (e) => {
   //     e.preventDefault();
 

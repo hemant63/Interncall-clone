@@ -9,9 +9,9 @@ function Login() {
   });
 
   const [users, setUsers] = useState(
-    JSON.parse(localStorage.getItem("user")) || []
+    JSON.parse(localStorage.getItem("interncalluser")) || []
   );
-
+  console.log(users, "users");
   const handleChange = (e) => {
     const { name, value } = e.target;
     setInfo({
@@ -36,7 +36,6 @@ function Login() {
       email: "",
       password: "",
     });
-    console.log();
   };
 
   return (

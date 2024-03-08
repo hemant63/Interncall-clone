@@ -1,6 +1,9 @@
 import Navbar from "./Navbar";
 
 function Home() {
+  // fetch("http://localhost:3000/comments")
+  //   .then((response) => response.json())
+  //   .then((json) => console.log(json));
   return (
     <>
       <div>
@@ -16,7 +19,6 @@ function Home() {
       >
         <div
           style={{
-            // padding: "40px",
             display: "flex",
             justifyContent: "space-around",
           }}
@@ -75,7 +77,10 @@ function Home() {
 
         <div>
           <h4>Skills Available For Practice</h4>
-          <table className="table " style={{ padding: "100px" }}>
+          <table
+            className="table "
+            style={{ padding: "100px", width: "50%", margin: "auto" }}
+          >
             <tbody>
               <tr
                 className="btn-group shadow"

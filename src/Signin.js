@@ -9,7 +9,7 @@ function Signin() {
     password: "",
   });
   const [users, setUsers] = useState(
-    JSON.parse(localStorage.getItem("user")) || []
+    JSON.parse(localStorage.getItem("interncalluser")) || []
   );
 
   const handleChange = (e) => {
@@ -31,7 +31,7 @@ function Signin() {
       password: "",
     });
     console.log(val);
-    localStorage.setItem("user", JSON.stringify(val));
+    localStorage.setItem("interncalluser", JSON.stringify(val));
     // navigate("/home");
   };
 
